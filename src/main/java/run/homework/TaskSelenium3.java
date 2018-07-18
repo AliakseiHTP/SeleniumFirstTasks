@@ -36,7 +36,7 @@ public class TaskSelenium3 {
         WebElement repassTbx = driverCH.findElement(By.name("registrationForm.repassword"));
         repassTbx.sendKeys(PASSWORD);
         WebElement emailTbx = driverCH.findElement(By.name("registrationForm.email"));
-        emailTbx.sendKeys(EMAIL);
+        emailTbx.sendKeys(String.format("%d%s",set_iRandom_number(1,100000),EMAIL));
         WebElement corporateTbx = driverCH.findElement(By.name("registrationForm.corporate"));
         corporateTbx.click();
 
@@ -46,6 +46,6 @@ public class TaskSelenium3 {
         WebElement submitTbx = driverCH.findElement(By.name("ok"));
         submitTbx.click();
         
-        //driverCH.close();
+        driverCH.close();
     }
 }
